@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Connexion</title>
+        <link rel = "stylesheet" href="StyleConnexion.css">
+    </head>
+
+    <body>
+        
+        <!--barre de naviagtion-->
+        <nav class="side-nav" >
+            <ul>
+                <li><a href="acceuil.html">acceuil</a></li>
+                <li><a href="fiche_stock.html">Me contacter</a></li>
+                <li><a href="PageJava.html">document?</a></li>
+                <li><a href="PageConnexion.html">Connexion</a></li>            </ul>
+        </nav>
+        
+        <!--gere la page de connexion-->
+        <div class="container">
+            <h2> connexion </h2>
+            <!--document php pas encore creer-->
+            <form action="process_login.php" method = "POST">
+                <div class ="form-group">
+                    <label for="username"> Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password"> Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+    
+    
+    </body>
+</html>
