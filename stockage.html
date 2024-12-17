@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Documents</title>
+    <link rel="stylesheet" href="stylePortfolio.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .document-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .document-list li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .document-list a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .document-list a:hover {
+            text-decoration: underline;
+        }
+
+        .document-list span {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .add-document {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .add-document input[type="text"] {
+            padding: 12px;
+            width: 60%;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .add-document button {
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-document button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mon Portfolio</h1>
+        <p>Bienvenue sur ma page de documents</p>
+    </header>
+
+    <div class="container">
+        <h2>Documents Disponibles</h2>
+        
+        <ul class="document-list">
+            <li>
+                <a href="#">Document 1 - Rapport.pdf</a>
+                <span>Ajouté le 17/12/2024</span>
+            </li>
+            <li>
+                <a href="#">Document 2 - Projet.docx</a>
+                <span>Ajouté le 15/12/2024</span>
+            </li>
+        </ul>
+
+        <div class="add-document">
+            <input type="text" placeholder="Ajouter un nouveau document..." id="document-name">
+            <button onclick="ajouterDocument()">Ajouter</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        function ajouterDocument() {
+            var documentName = document.getElementById('document-name').value;
+            if (documentName) {
+                var li = document.createElement('li');
+                li.innerHTML = `<a href="#">${documentName}</a><span>Ajouté le ${new Date().toLocaleDateString()}</span>`;
+                document.querySelector('.document-list').appendChild(li);
+                document.getElementById('document-name').value = ''; // Clear input field
+            }
+        }
+    </script>
+</body>
+
+</html>
